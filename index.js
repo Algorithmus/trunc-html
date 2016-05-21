@@ -19,7 +19,7 @@ function truncHtml (input, limit, options) {
     filter: filter,
     transformText: transformText
   };
-  var html = insane(input, assign(o.sanitizer || {}, insaneDefaults));
+  var html = insane(input, assign(o.sanitizer || {}, insaneDefaults)) + delimiter;
   return { html: html, text: plain };
   function filter (token) {
     if (token.tag in ignoreTags) {
@@ -31,7 +31,7 @@ function truncHtml (input, limit, options) {
     if (remainder <= 0) {
       return '';
     }
-    var truncated = truncText(text, remainder);
+    var truncated = truncText(text, remainder, {showDelimiter: false});
     if (truncated[truncated.length - 1] === delimiter) {
       remainder = 0;
     } else {

@@ -22,6 +22,6 @@
   "dependencies": {
     "assignment": "2.2.0",
     "insane": "2.5.0",
-    "trunc-text": "1.0.1"
+    "trunc-text": "https://github.com/Algorithmus/trunc-text/tarball/369ef3ea236f7a239ac9d50a6f0f2f287c3e3e46"
   }
 }
