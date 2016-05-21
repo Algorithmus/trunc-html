@@ -19,6 +19,9 @@ function truncHtml (input, limit, options) {
     filter: filter,
     transformText: transformText
   };
+  if (o.hasOwnProperty('showDelimiter') && !o.showDelimiter) {
+    delimiter = '';
+  }
   var html = insane(input, assign(o.sanitizer || {}, insaneDefaults)) + delimiter;
   return { html: html, text: plain };
   function filter (token) {
